@@ -1,0 +1,2 @@
+# naox.io
+Static website
