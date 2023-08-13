@@ -16,7 +16,7 @@
     --footer-text-color: #aa88aa;
     --footer-text-shadow-color: #553355;
     --href-color: #ffb6c1; /* Pinkish color (light pink) */
-
+    --href-hover-color: #ff69b4;
 }
 
 body {
@@ -54,16 +54,19 @@ a {
 }
 
 a:hover {
-    color: #ff69b4; /* Hot pink color on hover */
+    color: var(--href-hover-color);
 }
 
 .app-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+
 .app-card {
+    width: 256px;
     background-color: var(--card-background-color);
     padding: 15px;
     border-radius: 8px;
