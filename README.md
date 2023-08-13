@@ -1,2 +1,3 @@
-# naox.io
-Static website
+# NaoX Static Website
+![Logo](/assets/favicon.png)
+
