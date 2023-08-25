@@ -94,6 +94,9 @@ header, section {
 h1, h2 {
     color: var(--heading-color);
 }
+h3 {
+    color: var(--throat-chakra-color);
+}
 
 p {
     line-height: 1.5;
