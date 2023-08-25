@@ -77,16 +77,12 @@ body {
     margin: 0 auto;
 }
 
-header {
-    text-align: center;
-}
-
 header, section {
     padding: 20px;
     background-color: var(--background-color);
     margin: 20px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: 1px solid transparent;
 }
 
 h1, h2 {
