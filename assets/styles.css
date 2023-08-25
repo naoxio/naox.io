@@ -83,9 +83,9 @@ body {
 
 
 header, section {
-    padding: 20px;
+    padding: 1em;
     background-color: var(--background-color);
-    margin: 20px;
+    margin: 1em;
     border-radius: 8px;
     border: 1px solid transparent;
 }
@@ -94,12 +94,12 @@ header, section {
 h1, h2 {
     color: var(--heading-color);
 }
-h3 {
+h3, h4 {
     color: var(--throat-chakra-color);
 }
 
 p {
-    line-height: 1.5;
+    line-height: 2;
     color: var(--text-color);
 }
 
@@ -123,7 +123,7 @@ a:hover {
 
 .app-card {
     width: 256px;
-    padding: 15px;
+    padding: 1em;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0px 0px 20px var(--card-shadow-color);
