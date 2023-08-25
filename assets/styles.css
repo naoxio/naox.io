@@ -7,9 +7,11 @@
     --throat-chakra-color: #2196f3;
     --third-eye-chakra-color: #673ab7;
     --crown-chakra-color: #9c27b0;
-
+    --soul-star-chakra-color: #ffffff;
+    --earth-star-chakra-color: #000000;
+    
     /* Design based on chakra colors */
-    --background-color: var(--crown-chakra-color);
+    --background-color: var(--earth-star-chakra-color);
     --content-background-color: var(--third-eye-chakra-color);
     --border-color: var(--throat-chakra-color);
     --heading-color: var(--heart-chakra-color);
@@ -28,6 +30,43 @@
     --href-hover-color: var(--heart-chakra-color);
 }
 
+/* CSS classes for each chakra */
+.root {
+    border-color: var(--root-chakra-color);
+}
+
+.sacral {
+    border-color: var(--sacral-chakra-color);
+}
+
+.solar {
+    border-color: var(--solar-chakra-color);
+}
+
+.heart {
+    border-color: var(--heart-chakra-color);
+}
+
+.throat {
+    border-color: var(--throat-chakra-color);
+}
+
+.third-eye {
+    border-color: var(--third-eye-chakra-color);
+}
+
+.crown {
+    border-color: var(--crown-chakra-color);
+}
+
+.soul {
+    border-color: var(--soul-star-chakra-color);
+}
+
+.earth {
+    border-color: var(--earth-star-chakra-color);
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -44,7 +83,7 @@ header {
 
 header, section {
     padding: 20px;
-    background-color: var(--content-background-color);
+    background-color: var(--background-color);
     margin: 20px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
