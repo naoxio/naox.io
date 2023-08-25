@@ -73,7 +73,6 @@
 
 body {
     font-family: 'RockSalt';
-    margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -83,12 +82,10 @@ body {
 }
 
 
-header, section {
-    padding: 0 0.8em;
-    background-color: var(--background-color);
+article, header, section {
+    padding: 0.1em 1em;
     margin: 3em 0.8em;
-    border-radius: 8px;
-    border: 1px solid transparent;
+    border-radius: 1em;
 }
 
 
