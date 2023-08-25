@@ -1,22 +1,31 @@
 :root {
-    /* Color variables for the mystical purple theme */
-    --background-color: #110011;
-    --content-background-color: #220022;
-    --border-color: #441144;
-    --heading-color: #dd99dd;
-    --text-color: #eee;
-    --text-shadow-color: #664466;
-    --card-background-color: #330033;
-    --card-shadow-color: #884488;
-    --image-shadow-color: #aa77aa;
-    --button-background-color: #dd99dd;
-    --button-hover-background-color: #eeaaee;
-    --button-shadow-color: #ffccff;
-    --button-hover-shadow-color: #ffddff;
-    --footer-text-color: #aa88aa;
-    --footer-text-shadow-color: #553355;
-    --href-color: #ffb6c1; /* Pinkish color (light pink) */
-    --href-hover-color: #ff69b4;
+    /* Chakra colors */
+    --root-chakra-color: #e33f3f;
+    --sacral-chakra-color: #ff7d00;
+    --solar-chakra-color: #ffdb4d;
+    --heart-chakra-color: #4caf50;
+    --throat-chakra-color: #2196f3;
+    --third-eye-chakra-color: #673ab7;
+    --crown-chakra-color: #9c27b0;
+
+    /* Design based on chakra colors */
+    --background-color: var(--crown-chakra-color);
+    --content-background-color: var(--third-eye-chakra-color);
+    --border-color: var(--throat-chakra-color);
+    --heading-color: var(--heart-chakra-color);
+    --text-color: var(--solar-chakra-color);
+    --text-shadow-color: var(--sacral-chakra-color);
+    --card-background-color: var(--root-chakra-color);
+    --card-shadow-color: var(--sacral-chakra-color);
+    --image-shadow-color: var(--solar-chakra-color);
+    --button-background-color: var(--heart-chakra-color);
+    --button-hover-background-color: var(--throat-chakra-color);
+    --button-shadow-color: var(--third-eye-chakra-color);
+    --button-hover-shadow-color: var(--crown-chakra-color);
+    --footer-text-color: var(--solar-chakra-color);
+    --footer-text-shadow-color: var(--root-chakra-color);
+    --href-color: var(--throat-chakra-color);
+    --href-hover-color: var(--heart-chakra-color);
 }
 
 body {
@@ -27,6 +36,10 @@ body {
     color: var(--text-color);
     max-width: 700px;
     margin: 0 auto;
+}
+
+header {
+    text-align: center;
 }
 
 header, section {
