@@ -71,6 +71,10 @@
     box-shadow: 0px 0px 20px var(--earth-star-chakra-color);
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     font-family: 'RockSalt';
     padding: 0;
