@@ -56,6 +56,14 @@ body {
 article, header, section, div {
     border-radius: 1em;
 }
+header {
+    max-width: 400px;
+    margin: auto;
+}
+header div {
+
+    padding: 1em;
+}
 
 .content {
     padding: 0.1em 1em;
