@@ -94,8 +94,8 @@ p {
 
 a {
     color: var(--throat-chakra-color);
-    text-decoration: none; /* Remove underlines for cleaner look */
-    transition: color 0.3s; /* Smooth transition for hover effects */
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 a:hover {
@@ -147,6 +147,7 @@ footer {
 
 #heart, .heart {
     box-shadow: 0px 0px 20px var(--heart-chakra-color);
+    
 }
 
 
