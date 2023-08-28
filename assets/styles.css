@@ -15,43 +15,6 @@
     --earth-star-chakra-color: #000000;
 }
 
-/* CSS classes for each chakra */
-#root, .root {
-    box-shadow: 0px 0px 20px var(--root-chakra-color);
-}
-
-#sacral, .sacral {
-    box-shadow: 0px 0px 20px var(--sacral-chakra-color);
-}
-
-#solar, .solar {
-    box-shadow: 0px 0px 20px var(--solar-chakra-color);
-}
-
-#heart, .heart {
-    box-shadow: 0px 0px 20px var(--heart-chakra-color);
-}
-
-#throat, .throat {
-    box-shadow: 0px 0px 20px var(--throat-chakra-color);
-}
-
-#third-eye, .third-eye {
-    box-shadow: 0px 0px 20px var(--third-eye-chakra-color);
-}
-
-#crown, .crown {
-    box-shadow: 0px 0px 20px var(--crown-chakra-color);
-}
-
-#soul, .soul {
-    box-shadow: 0px 0px 20px var(--soul-star-chakra-color);
-}
-
-#earth, .earth {
-    box-shadow: 0px 0px 20px var(--earth-star-chakra-color);
-}
-
 
 .circle {
     width: 32px;
@@ -83,7 +46,7 @@ body {
     font-family: 'RockSalt';
     padding: 0;
     background-color: var(--earth-star-chakra-color);
-    color: var(--text-color);
+    color: var(--soul-star-chakra-color);
     max-width: 700px;
     margin: 1em auto;
     font-size: medium;
@@ -99,11 +62,21 @@ article, header, section, div {
 }
 
 
-h1, h2 {
-    color: var(--heart-chakra-color);
+h1 {
+    color: var(--crown-chakra-color);
+    font-size: xx-large; 
 }
-h3, h4 {
+h2 {
+    color: var(--third-eye-chakra-color);
+    font-size: x-large;
+}
+h3 {
     color: var(--throat-chakra-color);
+    font-size: large;
+}
+h4 {
+    color: var(--heart-chakra-color);
+    font-size: large;
 }
 
 p {
@@ -130,9 +103,9 @@ a:hover {
 
 .card {
     width: 256px;
-    padding: 1em;
-    margin: 1em 0;
-    border-radius: 8px;
+    padding: 2em;
+    margin: 1em 1em;
+    border-radius: 50%;
     text-align: center;
 }
 
@@ -141,23 +114,50 @@ a:hover {
     border-radius: 8px;
 }
 
-.launch-button {
-    display: inline-block;
-    padding: 10px 20px;
-
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 10px;
-    box-shadow: 0px 0px 10px var(--third-eye-chakra-color);
-}
-
-.launch-button:hover {
-    box-shadow: 0px 0px 15px var(--crown-chakra-color);
-}
 
 footer {
     text-align: center;
     margin-top: 40px;
     color: var(--solar-chakra-color);
     text-shadow: 0px 0px 5px var(--root-chakra-color);
+}
+
+
+
+/* CSS classes for each chakra */
+#root, .root {
+    box-shadow: 0px 0px 20px var(--root-chakra-color);
+}
+
+#sacral, .sacral {
+    box-shadow: 0px 0px 20px var(--sacral-chakra-color);
+}
+
+#solar, .solar {
+    box-shadow: 0px 0px 20px var(--solar-chakra-color);
+}
+
+#heart, .heart {
+    box-shadow: 0px 0px 20px var(--heart-chakra-color);
+}
+
+
+#throat, .throat {
+    box-shadow: 0px 0px 20px var(--throat-chakra-color);
+}
+
+#third-eye, .third-eye {
+    box-shadow: 0px 0px 20px var(--third-eye-chakra-color);
+}
+
+#crown, .crown {
+    box-shadow: 0px 0px 20px var(--crown-chakra-color);
+}
+
+#soul, .soul {
+    box-shadow: 0px 0px 20px var(--soul-star-chakra-color);
+}
+
+#earth, .earth {
+    box-shadow: 0px 0px 20px var(--earth-star-chakra-color);
 }
