@@ -75,6 +75,10 @@
     display: none;
 }
 
+.center {
+    text-align: center;
+}
+
 body {
     font-family: 'RockSalt';
     padding: 0;
