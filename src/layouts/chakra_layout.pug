@@ -1,6 +1,9 @@
-include ../mixins/chakra_nav.pug
+extends base_layout
 
-header
-  +chakraNav
+block body
+  include ../mixins/chakra_nav.pug
 
-include base_layout
+  header
+    +chakraNav
+
+  block content

@@ -4,12 +4,13 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
-    - var title = "NaoX - Experience Harmony"
-    - var description = "NaoX is dedicated to harmonizing the digital, spiritual, and physical realms."
-    - var url = "https://naox.io"
-    - var image = "/assets/logo.png"
-    - var author = "NaoX"
-    - var tags = "NaoX, spiritual, digital, physical, journey, experience, harmony, awakening"
+    block variables
+      - var title = "NaoX - Embark on a Journey to Experience"
+      - var description = "NaoX is dedicated to harmonizing the digital, spiritual, and physical realms."
+      - var url = "https://naox.io"
+      - var image = "/assets/logo.png"
+      - var author = "NaoX"
+      - var tags = "NaoX, spiritual, digital, physical, journey, experience, harmony, awakening"
 
     title= title
     meta(name="description", content=description)
@@ -36,7 +37,7 @@ html(lang="en")
     link(rel="icon", type="image/png", href="/assets/favicon.png")
 
   body
-    block content
+    block body
 
     //
       footer#earth-star
