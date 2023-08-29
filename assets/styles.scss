@@ -19,24 +19,61 @@ $chakras: (
   width: 32px;
   height: 32px;
   border-radius: 100%;
-  margin: 1rem auto;
+  margin: 0.5rem 0.5rem;
+}
+
+.xs {
+  width: 32px;
+  height: 32px;
+
+}
+
+.xxl {
+  width: 128px;
+  height: 128px;
+  margin: 2rem auto;
+}
+
+.s {
+  width: 44px;
+  height: 44px;
+}
+
+.l {
+  width: 54px;
+  height: 54px;
 }
 
 .xl {
   width: 64px;
   height: 64px;
+}
+
+.m {
+  width: 54px;
+  height: 32px;
+  
+}
+.m-auto {
   margin: 2rem auto;
 }
 
-a .circle {
-  width: 54px;
-  height: 32px;
+
+.circle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .hidden {
   display: none;
 }
-
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .center {
   text-align: center;
 }
@@ -110,10 +147,13 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.space-around {
+  justify-content: space-around;
+}
 .card {
   width: 256px;
   padding: 2em;
-  margin: 1em 1em;
+  margin: 1em auto;
   border-radius: 50%;
   text-align: center;
 }
@@ -132,7 +172,52 @@ footer {
 
 /* CSS classes for each chakra */
 @each $chakra, $color in $chakras {
-  ##{$chakra}, .#{$chakra} {
+  .#{$chakra} {
     box-shadow: 0px 0px 20px $color;
+  }
+  @keyframes #{$chakra}-shadowPulse {
+    0% {
+      box-shadow: inset 0px 0px 5px rgba($color, 0);
+    }
+    50% {
+      box-shadow: inset 0px 0px 10px $color;
+    }
+    100% {
+      box-shadow: inset 0px 0px 5px rgba($color, 0);
+    }
+}
+
+
+  .#{$chakra}-animated {
+    animation: #{$chakra}-shadowPulse 2s infinite;
+  }
+}
+
+
+
+.chakra-container {
+  position: relative;
+  width: 260px; 
+  height: 260px; 
+
+  .center-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  $total-chakras: length(map-keys($chakras)) - 2;
+  $rotation-step: 360deg / $total-chakras;
+  $current-rotation: 0deg;
+
+  @each $chakra, $color in $chakras {
+    .#{$chakra}-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate($current-rotation) translateY(-100px) rotate(-$current-rotation);
+    }
+    $current-rotation: $current-rotation + $rotation-step;
   }
 }
