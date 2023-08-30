@@ -228,12 +228,19 @@ a:hover {
         .soul-star {
           opacity: 0;
         }
+
+        .earth-star {
+          opacity: 0;
+        }
       }
 
       .#{$chakra}-start .#{$ordered-chakra}-item:hover {
         color: rgba($ordered-color, 1);
 
         .soul-star {
+          opacity: 1;
+        }
+        .earth-star {
           opacity: 1;
         }
       }
