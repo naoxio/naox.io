@@ -10,12 +10,13 @@ $chakras: (
   "heart": #4caf50,
   "throat": #2196f3,
   "third-eye": #673ab7,
+  "ajna": #673ab7,
   "crown": #9c27b0,
-  "soul-star": #ffffff,
-  "earth-star": #000000
+  "soul-star": #fef,
+  "earth-star": #101
 );
 
-$chakras7: map-remove($chakras, "soul-star", "earth-star");
+$chakras7: map-remove($chakras, "soul-star", "earth-star", "ajna");
 
 $sizes: (
   'xxs': 16px,
@@ -198,6 +199,12 @@ a:hover {
   position: relative;
   width: 260px; 
   height: 260px; 
+  
+  text-shadow: 1px 1px 4px map-get($chakras, "ajna");
+
+  .soul-star, .earth-star, .ajna {
+    opacity: 0.2;
+  }
 
   .center-image {
     position: absolute;
@@ -224,23 +231,16 @@ a:hover {
         left: 50%;
         transform: translate(-50%, -50%) rotate($current-rotation) translateY(-100px) rotate(-$current-rotation);
         color: rgba($ordered-color, 0.8);
+        text-shadow: -1px -1px 5px rgba($ordered-color, 0.8);
 
-        .soul-star {
-          opacity: 0;
-        }
 
-        .earth-star {
-          opacity: 0;
-        }
       }
 
       .#{$chakra}-start .#{$ordered-chakra}-item:hover {
         color: rgba($ordered-color, 1);
+        text-shadow: -1px -1px 5px rgba($ordered-color, 1);
 
-        .soul-star {
-          opacity: 1;
-        }
-        .earth-star {
+        .soul-star, .earth-star, .ajna {
           opacity: 1;
         }
       }
