@@ -1,24 +1,29 @@
 include animated_chakra.pug 
 
+mixin chakraCircle(chakra)
+  div.circle-wrapper
+    p.circle.soul-star
+    p.circle.absolute(class=chakra)
+      block
+
+
 mixin chakraNav(animate)
   div.chakra-container.m-auto
     a(href="/").center-image
       img(width="96" src="/assets/logo.png")
     a(href="/crown" class="crown-item")
-      p.crown.circle
+      +chakraCircle("crown")
     a(href="/third-eye" class="third-eye-item")
-      p.third-eye.circle
+      +chakraCircle("third-eye")
     a(href="/throat" class="throat-item")
-      p.throat.circle
+      +chakraCircle("throat")
     a(href="/heart" class="heart-item")
-      div.circle-wrapper
-        if (animate == "heart")
-          +animatedChakra("heart")
-        else
-          p.heart.circle
+      +chakraCircle("heart")
+        p.absolute I
+
     a(href="/solar" class="solar-item")
-      p.solar.circle
+      +chakraCircle("solar")
     a(href="/sacral" class="sacral-item")
-      p.sacral.circle
+      +chakraCircle("sacral")
     a(href="/root" class="root-item")
-      p.root.circle
+      +chakraCircle("root")

@@ -15,10 +15,26 @@ $chakras: (
   "earth-star": #000000
 );
 
+$sizes: (
+  'xxs': 16px,
+  'xs': 24px,
+  's': 36px,
+  'm': 48px,
+  'l': 60px,
+  'xl': 80px,
+  'xxl': 128px
+);
+
+@each $name, $size in $sizes {
+  .#{$name} {
+    width: $size;
+    height: $size;
+  }
+}
+
 html, body {
   padding: 0;
   margin: 0;
-  
 }
 
 .circle {
@@ -28,48 +44,14 @@ html, body {
   margin: 0.5rem 0.5rem;
 }
 
-.xs {
-  width: 32px;
-  height: 32px;
-
-}
-
-.xxl {
-  width: 128px;
-  height: 128px;
-  margin: 2rem auto;
-}
-
-.s {
-  width: 44px;
-  height: 44px;
-}
-
-.l {
-  width: 54px;
-  height: 54px;
-}
-
-.xl {
-  width: 64px;
-  height: 64px;
-}
-
-.m {
-  width: 54px;
-  height: 32px;
-  
-}
 .m-auto {
   margin: 2rem auto;
 }
-
 
 .circle-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .flex-center {
@@ -79,6 +61,9 @@ html, body {
 }
 .center {
   text-align: center;
+}
+.absolute {
+  position: absolute;
 }
 
 #container {
@@ -166,6 +151,11 @@ a:hover {
   .#{$chakra} {
     box-shadow: 0px 0px 20px $color;
   }
+  .#{$chakra}:hover {
+    box-shadow: 0px 0px 20px rgba($color, 1);
+  }
+
+
   @keyframes #{$chakra}-shadowPulse {
     0% {
       box-shadow: inset 0px 0px 5px rgba($color, 0);
@@ -180,7 +170,7 @@ a:hover {
 
 
   .#{$chakra}-animated {
-    animation: #{$chakra}-shadowPulse 2s infinite;
+    animation: #{$chakra}-shadowPulse 3s infinite;
   }
 }
 
@@ -208,6 +198,20 @@ a:hover {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate($current-rotation) translateY(-100px) rotate(-$current-rotation);
+      color: rgba($color, 0.8);
+
+      .soul-star {
+        opacity: 0;
+      }
+    }
+
+
+    .#{$chakra}-item:hover {
+      color: rgba($color, 1);
+
+      .soul-star {
+        opacity: 1;
+      }
     }
     $current-rotation: $current-rotation + $rotation-step;
   }
