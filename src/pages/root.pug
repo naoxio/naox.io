@@ -1,12 +1,10 @@
-extends ../layouts/chakra_layout.pug
+extends ../layouts/base_layout.pug
+include ../mixins/chakra_nav.pug
 
 block variables 
   - title = "NaoX Muladhara"
   
-block content
-  //
-      div#root.content.soul-star
-        a(href="/root")
-        h2 GroundX
-        h3 Staying Connected
-        p Stay grounded and connected to the world around you.
+block body
+  header
+    +chakraNav("root")
+  

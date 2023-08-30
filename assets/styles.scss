@@ -15,6 +15,8 @@ $chakras: (
   "earth-star": #000000
 );
 
+$chakras7: map-remove($chakras, "soul-star", "earth-star");
+
 $sizes: (
   'xxs': 16px,
   'xs': 24px,
@@ -166,7 +168,7 @@ a:hover {
     100% {
       box-shadow: inset 0px 0px 5px rgba($color, 0);
     }
-}
+  }
 
 
   .#{$chakra}-animated {
@@ -175,6 +177,22 @@ a:hover {
 }
 
 
+@function rotate-list($list, $start-index) {
+  $rotated-list: ();
+  $length: length($list);
+
+  $start-index: if($start-index < 1, 1, $start-index);
+
+  @for $i from $start-index through $length {
+    $rotated-list: append($rotated-list, nth($list, $i));
+  }
+
+  @for $i from 1 through $start-index  {
+    $rotated-list: append($rotated-list, nth($list, $i));
+  }
+
+  @return $rotated-list;
+}
 
 .chakra-container {
   position: relative;
@@ -188,35 +206,42 @@ a:hover {
     transform: translate(-50%, -50%);
   }
 
-  $total-chakras: length(map-keys($chakras)) - 2;
+  $total-chakras: length(map-keys($chakras7));
   $rotation-step: calc(360deg / $total-chakras);
-  $current-rotation: 0deg;
 
-  @each $chakra, $color in $chakras {
-    .#{$chakra}-item {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate($current-rotation) translateY(-100px) rotate(-$current-rotation);
-      color: rgba($color, 0.8);
+  @each $chakra, $color in $chakras7 {
+    $current-rotation: 0deg;
 
-      .soul-star {
-        opacity: 0;
+    $start-index: index(map-keys($chakras7), $chakra);
+    $order: rotate-list(map-keys($chakras7), $start-index);
+  
+    @each $ordered-chakra, $ordered-color in $order {
+      $ordered-color: map-get($chakras7, $ordered-chakra);
+
+      .#{$chakra}-start .#{$ordered-chakra}-item {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate($current-rotation) translateY(-100px) rotate(-$current-rotation);
+        color: rgba($ordered-color, 0.8);
+
+        .soul-star {
+          opacity: 0;
+        }
       }
-    }
 
+      .#{$chakra}-start .#{$ordered-chakra}-item:hover {
+        color: rgba($ordered-color, 1);
 
-    .#{$chakra}-item:hover {
-      color: rgba($color, 1);
-
-      .soul-star {
-        opacity: 1;
+        .soul-star {
+          opacity: 1;
+        }
       }
+
+      $current-rotation: $current-rotation + $rotation-step;
     }
-    $current-rotation: $current-rotation + $rotation-step;
   }
 }
-
 
 
 #themeToggle {

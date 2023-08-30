@@ -1,5 +1,9 @@
-extends ../layouts/chakra_layout.pug
+extends ../layouts/base_layout.pug
+include ../mixins/chakra_nav.pug
 
 block variables 
   - title = "NaoX Sahasrara"
-  
+
+block body
+  header
+    +chakraNav("crown")

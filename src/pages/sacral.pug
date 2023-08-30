@@ -1,12 +1,10 @@
-extends ../layouts/chakra_layout.pug
- 
+extends ../layouts/base_layout.pug
+include ../mixins/chakra_nav.pug
+
 block variables 
   - title = "NaoX Svadhisthana"
 
-block content
-  //
-      div#sacral.content.soul-star
-        a(href="/sacral")
-        h2 FlowX
-        h3 Embracing Creativity
-        p Unleash your creative potential and let your passions flow.
+block body
+  header
+    +chakraNav("sacral")
+    
