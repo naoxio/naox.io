@@ -15,6 +15,12 @@ $chakras: (
   "earth-star": #000000
 );
 
+html, body {
+  padding: 0;
+  margin: 0;
+  
+}
+
 .circle {
   width: 32px;
   height: 32px;
@@ -75,38 +81,28 @@ $chakras: (
   text-align: center;
 }
 
-html, body {
-  padding: 0;
-  margin: 0;
-}
 #container {
+  position: fixed;
+  flex-direction: column;
   font-family: 'RockSalt';
   font-size: medium;
   transition: background-color 0.3s ease;
   background-color: map-get($chakras, "earth-star");
   color: map-get($chakras, "soul-star");
-  position: absolute;
-  width: 100%;
+  padding: 1em;
   top: 0;
-  border-radius: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
 }
 
-header, section {
-  border-radius: 1em;
-}
 
 header {
   max-width: 400px;
   margin: auto;
 }
 
-header div {
-  padding: 1em;
-}
-
-.content {
-  padding: 0.1em 1em;
-}
 
 h1 {
   color: map-get($chakras, "crown");
@@ -152,6 +148,7 @@ a:hover {
 .space-around {
   justify-content: space-around;
 }
+
 .card {
   width: 256px;
   padding: 2em;
@@ -163,13 +160,6 @@ a:hover {
 .card img {
   max-width: 100%;
   border-radius: 8px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-  color: map-get($chakras, "solar");
-  text-shadow: 0px 0px 5px map-get($chakras, "root");
 }
 
 /* CSS classes for each chakra */
@@ -257,13 +247,13 @@ footer {
 
 label[for="themeToggle"] {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   left: 20px;
   cursor: pointer;
   z-index: 1000;
 
   img {
-    width: 30px;
-    height: 30px;
+    width: 2em;
+    height: 2em;
   }
 }
