@@ -37,7 +37,14 @@ html(lang="en")
     link(rel="icon", type="image/png", href="/assets/favicon.png")
 
   body
-    block body
+    input(type="checkbox", id="themeToggle")
+    label(for="themeToggle") 
+      img#sunIcon(src="/assets/icons/wi-day-sunny.svg", alt="Sun Icon")
+      img#moonIcon(src="/assets/icons/wi-night-clear.svg", alt="Moon Icon")
+
+    div#container
+      block body
+
 
     //
       footer#earth-star
