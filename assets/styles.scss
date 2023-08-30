@@ -97,7 +97,6 @@ html, body {
   overflow-y: auto;
 }
 
-
 header {
   max-width: 400px;
   margin: auto;
@@ -200,7 +199,7 @@ a:hover {
   }
 
   $total-chakras: length(map-keys($chakras)) - 2;
-  $rotation-step: 360deg / $total-chakras;
+  $rotation-step: calc(360deg / $total-chakras);
   $current-rotation: 0deg;
 
   @each $chakra, $color in $chakras {
