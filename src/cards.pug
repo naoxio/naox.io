@@ -1,0 +1,27 @@
+mixin card(card_title, card_description, card_description_quick, card_url, card_img, quick)
+  if (!quick)
+    div.card
+      img(src=card_img, alt=card_title)
+      h4 #{card_title}
+      p #{card_description}
+      a(href=card_url) Launch App
+  else
+    h3
+      a(href=card_url).solar-text #{card_title}
+    p #{card_description_quick}
+
+mixin inbe(quick)
+  - var title = "Inner Breeze"
+  - var description = "Experience the Wim Hof breathing method with Inner Breeze."
+  - var description_quick = "Guided Wim Hof Breathing Method"
+  - var url = "/inbe/#/"
+  - var img = "/assets/cards/inner-breeze.png"
+  +card(title, description, description_quick, url, img, quick)
+
+mixin gitea(quick)
+  - var title = "Git NaoX"
+  - var description = "Independent Gitea Instance"
+  - var description_quick = "Independent Gitea Instance"
+  - var url = "https://git.naox.io"
+  - var img = "/assets/cards/git-naox.png"
+  +card(title, description, description_quick, url, img, quick)

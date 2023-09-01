@@ -1,5 +1,6 @@
 extends ../layouts/base_layout.pug
 include ../mixins/chakra_nav.pug
+include ../cards.pug
 
 block body
   header.content.center
@@ -8,12 +9,7 @@ block body
     div.row.space-between
       div
         h2 Creations
-        h3
-          a(href="/inbe/#/").solar-text Inner Breeze
-        p Guided Wim Hof Breathing Method
+        +inbe(true)
       div
         h2 Services
-        h3
-          a(href="/inbe/#/").throat-text Git NaoX
-        p Self-hosted Gitea instance
-      
+        +gitea(true)
