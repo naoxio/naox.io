@@ -1,4 +1,4 @@
-mixin card(card_title, card_description, card_description_quick, card_url, card_img, quick)
+mixin card(card_title, card_description, card_description_quick, card_url, card_img, quick, chakra)
   if (!quick)
     div.card
       img(src=card_img, alt=card_title)
@@ -7,7 +7,7 @@ mixin card(card_title, card_description, card_description_quick, card_url, card_
       a(href=card_url) Launch App
   else
     h3
-      a(href=card_url).solar-text #{card_title}
+      a(href=card_url class=chakra + "-text") #{card_title}
     p #{card_description_quick}
 
 mixin inbe(quick)
@@ -16,7 +16,7 @@ mixin inbe(quick)
   - var description_quick = "Guided Wim Hof Breathing Method"
   - var url = "/inbe/#/"
   - var img = "/assets/cards/inner-breeze.png"
-  +card(title, description, description_quick, url, img, quick)
+  +card(title, description, description_quick, url, img, quick, "solar")
 
 mixin gitea(quick)
   - var title = "Git NaoX"
@@ -24,4 +24,4 @@ mixin gitea(quick)
   - var description_quick = "Independent Gitea Instance"
   - var url = "https://git.naox.io"
   - var img = "/assets/cards/git-naox.png"
-  +card(title, description, description_quick, url, img, quick)
+  +card(title, description, description_quick, url, img, quick, "throat")
