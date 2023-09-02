@@ -43,14 +43,14 @@ html, body {
 }
 
 .circle {
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
   border-radius: 100%;
-  margin: 0.5rem 0.5rem;
+  margin: 1em 1em;
 }
 
 .m-auto {
-  margin: 2rem auto;
+  margin: 2em auto;
 }
 
 .circle-wrapper {
@@ -211,8 +211,8 @@ a:hover {
 
 .chakra-container {
   position: relative;
-  width: 260px; 
-  height: 260px; 
+  width: 320px; 
+  height: 320px; 
   
   text-shadow: 1px 1px 4px map-get($chakras, "ajna");
 
@@ -243,11 +243,9 @@ a:hover {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) rotate($current-rotation) translateY(-100px) rotate(-$current-rotation);
+        transform: translate(-50%, -50%) rotate($current-rotation) translateY(-140px) rotate(-$current-rotation);
         color: rgba($ordered-color, 0.8);
         text-shadow: -1px -1px 5px rgba($ordered-color, 0.8);
-
-
       }
 
       .#{$chakra}-start .#{$ordered-chakra}-item:hover {
