@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'RockSalt';
-  src: url(/assets/fonts/RockSalt-Regular.ttf);
+  font-family: 'Tibet';
+  src: url(/assets/fonts/Tibet.otf);
 }
 
 $chakras: (
@@ -38,6 +38,8 @@ $sizes: (
 html, body {
   padding: 0;
   margin: 0;
+  font-family: 'tibet';
+  font-size: x-large;
 }
 
 .circle {
@@ -72,8 +74,6 @@ html, body {
 #container {
   position: fixed;
   flex-direction: column;
-  font-family: 'RockSalt';
-  font-size: medium;
   transition: background-color 0.3s ease;
   background-color: map-get($chakras, "earth-star");
   color: map-get($chakras, "soul-star");
@@ -83,32 +83,33 @@ html, body {
   right: 0;
   left: 0;
   overflow-y: auto;
+
 }
 
 header {
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
 }
 
 
 h1 {
   color: map-get($chakras, "crown");
-  font-size: xx-large; 
+  font-size: 2em; 
 }
 
 h2 {
   color: map-get($chakras, "third-eye");
-  font-size: x-large;
+  font-size: 1.5em;
 }
 
 h3 {
   color: map-get($chakras, "heart");
-  font-size: large;
+  font-size: 1.2em;
 }
 
 h4 {
   color: map-get($chakras, "solar");
-  font-size: large;
+  font-size: 1em;
 }
 
 p {
@@ -127,7 +128,12 @@ a:hover {
 
 .row {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  div {
+    margin: 0.5em;
+    width: 220px;
+  }
 }
 
 .wrap {
