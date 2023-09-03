@@ -28,6 +28,9 @@ $sizes: (
   'xxl': 128px
 );
 
+$default-background-color: map-get($chakras, "earth-star");
+$light-theme-background-color: map-get($chakras, "soul-star");
+
 @each $name, $size in $sizes {
   .#{$name} {
     width: $size;
@@ -41,6 +44,21 @@ html, body {
   font-family: 'tibet';
   font-size: x-large;
 }
+
+body {
+  &.light-theme {
+    #container {
+      background-color: $light-theme-background-color;
+    }
+  }
+
+  &:not(.light-theme) {
+    #container {
+      background-color: $default-background-color;
+    }
+  }
+}
+
 
 .circle {
   width: 52px;
@@ -163,16 +181,30 @@ a:hover {
 /* CSS classes for each chakra */
 @each $chakra, $color in $chakras {
   .#{$chakra} {
-    box-shadow: 0px 0px 20px $color;
+    box-shadow: 0px 0px 20px rgba($color, 0.8);
   }
   .#{$chakra}:hover {
     box-shadow: 0px 0px 20px rgba($color, 1);
   }
 
-  .#{$chakra}-text {
+  .#{$chakra}-text { 
     color: $color;
   }
 
+
+  .border-card-#{$chakra} {
+
+    background-color: mix($default-background-color, $color, 90%);
+    padding: 0.5em;
+    border: 1px solid rgba($color, 0.5);
+    border-radius: 2em;
+    &:hover {
+      border: 1px solid $color;
+    }
+    body.light-theme & {
+      background-color: mix($light-theme-background-color, $color, 90%);
+    }
+  }
   @keyframes #{$chakra}-shadowPulse {
     0% {
       box-shadow: inset 0px 0px 5px rgba($color, 0);
