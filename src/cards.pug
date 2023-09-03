@@ -4,7 +4,7 @@ mixin card(card_title, card_description, card_description_quick, card_url, card_
       a(href=card_url)
         img(src=card_img, alt=card_title)
         h2 #{card_title}
-        p #{card_description}
+        p(class="text-color") #{card_description}
   else
     a(href=card_url)
       div(class="border-card-" + chakra)

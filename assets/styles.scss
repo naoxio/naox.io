@@ -154,6 +154,14 @@ a:hover {
   }
 }
 
+
+.text-color {
+  color: map-get($chakras, "soul-star");
+  body.light-theme & {
+    color: map-get($chakras, "earth-star");
+  }
+}
+
 .wrap {
   flex-wrap: wrap;
 }
@@ -196,10 +204,10 @@ a:hover {
 
     background-color: mix($default-background-color, $color, 90%);
     padding: 0.5em;
-    border: 1px solid rgba($color, 0.5);
+    border: 1px solid $color;
     border-radius: 2em;
     &:hover {
-      border: 1px solid $color;
+      border: 1px solid map-get($chakras, "ajna");
     }
     body.light-theme & {
       background-color: mix($light-theme-background-color, $color, 90%);
