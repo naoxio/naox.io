@@ -65,6 +65,13 @@ body {
   height: 52px;
   border-radius: 100%;
   margin: 1em 1em;
+  @each $name, $size in $sizes {
+    &.#{$name} {
+      $size: calc($size * 1);
+      width: $size;
+      height: $size;
+    }
+  }
 }
 
 .m-auto {
@@ -174,7 +181,7 @@ a:hover {
 }
 
 .card {
-  width: 256px;
+  max-width: 480px;
   padding: 2em;
   margin: 1em auto;
   border-radius: 50%;
@@ -182,7 +189,7 @@ a:hover {
 }
 
 .card img {
-  max-width: 100%;
+  max-width: 256px;
   border-radius: 8px;
 }
 
@@ -201,13 +208,15 @@ a:hover {
 
 
   .border-card-#{$chakra} {
-
     background-color: mix($default-background-color, $color, 90%);
     padding: 0.5em;
     border: 1px solid $color;
     border-radius: 2em;
+
+    $hover-border-color: if($chakra == "third-eye", map-get($chakras, "root"), map-get($chakras, "ajna"));
+
     &:hover {
-      border: 1px solid map-get($chakras, "ajna");
+      border: 1px solid $hover-border-color;
     }
     body.light-theme & {
       background-color: mix($light-theme-background-color, $color, 90%);
@@ -224,8 +233,6 @@ a:hover {
       box-shadow: inset 0px 0px 5px rgba($color, 0);
     }
   }
-
-
   .#{$chakra}-animated {
     animation: #{$chakra}-shadowPulse 3s infinite;
   }
@@ -251,11 +258,13 @@ a:hover {
 
 .chakra-container {
   position: relative;
+
   width: 320px; 
   height: 320px; 
   
   text-shadow: 1px 1px 4px map-get($chakras, "ajna");
 
+  
   .soul-star, .earth-star, .ajna {
     opacity: 0.2;
   }
@@ -269,6 +278,18 @@ a:hover {
 
   $total-chakras: length(map-keys($chakras7));
   $rotation-step: calc(360deg / $total-chakras);
+  $radius: 140px;
+
+
+  @each $name, $size in $sizes {
+    &.#{$name} {
+      width: calc($size * 6);
+      height: calc($size * 6);
+      img {
+        width: calc($size * 2);
+      }
+    }
+  }
 
   @each $chakra, $color in $chakras7 {
     $current-rotation: 0deg;
@@ -283,7 +304,15 @@ a:hover {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) rotate($current-rotation) translateY(-140px) rotate(-$current-rotation);
+        transform: translate(-50%, -50%) rotate($current-rotation) translateY(-$radius) rotate(-$current-rotation);
+        
+        @each $name, $size in $sizes {
+          &.#{$name} {
+            $size: calc($size * 2);
+            transform: translate(-50%, -50%) rotate($current-rotation) translateY(-$size) rotate(-$current-rotation);
+          }
+        }
+      
         color: rgba($ordered-color, 0.8);
         text-shadow: -1px -1px 5px rgba($ordered-color, 0.8);
       }

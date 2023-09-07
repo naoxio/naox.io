@@ -1,35 +1,35 @@
 include animated_chakra.pug 
 
-mixin chakraCircle(chakra)
-  div.circle-wrapper(class=chakra + "-item")
-    p.circle.absolute.soul-star
-    p.circle.absolute.ajna
-    p.circle.absolute(class=chakra)
+mixin chakraCircle(chakra, size)
+  div.circle-wrapper(class=chakra + "-item " + size)
+    p.circle.absolute.soul-star(class=size)
+    p.circle.absolute.ajna(class=size)
+    p.circle.absolute(class=chakra + " " + size)
     block
 
-mixin chakraNav(start)
-  div.chakra-container.m-auto
+mixin chakraNav(start, size)
+  div.chakra-container.m-auto(class=size).card(class="border-card-" + start)
     a(href="/").center-image
       img(width="128" src="/assets/logo.png")
-    a(class=start + "-start" href="/crown")
-      +chakraCircle("crown")
+    a(class=start + "-start " href="/crown")
+      +chakraCircle("crown", size)
 
     a(class=start + "-start", href="/third-eye")
-      +chakraCircle("third-eye")
+      +chakraCircle("third-eye", size)
 
     a(class=start + "-start", href="/throat")
-      +chakraCircle("throat")
+      +chakraCircle("throat", size)
         p.absolute I
 
     a(class=start + "-start", href="/heart")
-      +chakraCircle("heart")
+      +chakraCircle("heart", size)
 
     a(class=start + "-start", href="/solar")
-      +chakraCircle("solar")
+      +chakraCircle("solar", size)
         p.absolute I
 
     a(class=start + "-start", href="/sacral")
-      +chakraCircle("sacral")
+      +chakraCircle("sacral", size)
       
     a(class=start + "-start", href="/root")
-      +chakraCircle("root")
+      +chakraCircle("root", size)

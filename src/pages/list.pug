@@ -5,7 +5,7 @@ include ../cards.pug
 block body
   header.content.center
     h1 NaoX
-    +chakraNav("root")
+    +chakraNav("root", "m")
     div.row.space-between.wrap
       div
         h2 Products
@@ -13,8 +13,6 @@ block body
       div
         h2 Services
         +gitea(true)
-
-
 
     h2 Find Us On
     div.row.space-around
