@@ -1,4 +1,4 @@
-mixin card(card_title, card_description, card_description_quick, card_url, card_img, quick, chakra, info)
+mixin card(card_title, card_description, tagline, card_url, card_img, quick, chakra, info)
   - var final_url = info || card_url;
   if (!quick)
     div.card(class="border-card-" + chakra)
@@ -10,21 +10,31 @@ mixin card(card_title, card_description, card_description_quick, card_url, card_
     a(href=final_url)
       div(class="border-card-" + chakra)
         h3 #{card_title}
-        p #{card_description_quick}
+        p #{tagline}
 
 mixin inbe(quick)
   - var title = "Inner Breeze"
   - var description = "Experience the Wim Hof breathing method with Inner Breeze."
-  - var description_quick = "Guided Wim Hof Breathing Method"
+  - var tagline = "Guided Wim Hof Breathing Method"
   - var url = "https://inner-breeze.app/"
   - var info = "/inbe"
   - var img = "/assets/cards/inner-breeze.png"
-  +card(title, description, description_quick, url, img, quick, "solar", info)
+  +card(title, description, tagline, url, img, quick, "solar", info)
 
 mixin gitea(quick)
   - var title = "Git NaoX"
   - var description = "Independent Gitea Instance"
-  - var description_quick = "Independent Gitea Instance"
+  - var tagline = "Independent Gitea Instance"
   - var url = "https://git.naox.io"
   - var img = "/assets/cards/git-naox.png"
-  +card(title, description, description_quick, url, img, quick, "throat")
+  +card(title, description, tagline, url, img, quick, "throat")
+
+
+mixin uku(quick)
+  - var title = "Ukuvota"
+  - var description = "Ukuvota is a collaborative score voting platform where anyone can start a process. Proposals are collected and voted upon using emojis. The final scores highlight the preferred solution."
+  - var tagline = "Finding the best solution"
+  - var url = "https://ukuvota.world"
+  - var info = "/uku"
+  - var img = "/assets/cards/ukuvota.png"
+  +card(title, description, tagline, url, img, quick, "throat", info)

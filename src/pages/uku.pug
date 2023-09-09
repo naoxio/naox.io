@@ -1,7 +1,10 @@
 extends ../layouts/base_layout.pug
+include ../mixins/quick_nav.pug
 include ../cards.pug
 
 block variables 
   - title = "NaoX - Ukuvota"
   
 block body
+  +quickNav
+  +uku

@@ -1,10 +1,10 @@
 extends ../layouts/base_layout.pug
+include ../mixins/quick_nav.pug
 include ../cards.pug
 
 block variables 
   - title = "NaoX - Inner Breeze"
   
 block body
-  h1.center
-    a(href="/") NaoX
+  +quickNav
   +inbe

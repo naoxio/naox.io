@@ -112,7 +112,7 @@ body {
 }
 
 header {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -179,7 +179,14 @@ a:hover {
 .space-around {
   justify-content: space-around;
 }
-
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .card {
+    width: 320px;
+  }
+}
 .card {
   max-width: 480px;
   padding: 2em;
