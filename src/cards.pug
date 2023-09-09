@@ -1,12 +1,13 @@
-mixin card(card_title, card_description, card_description_quick, card_url, card_img, quick, chakra)
+mixin card(card_title, card_description, card_description_quick, card_url, card_img, quick, chakra, info)
+  - var final_url = info || card_url;
   if (!quick)
     div.card(class="border-card-" + chakra)
-      a(href=card_url)
+      a(href=final_url)
         img(src=card_img, alt=card_title)
         h2 #{card_title}
         p(class="text-color") #{card_description}
   else
-    a(href=card_url)
+    a(href=final_url)
       div(class="border-card-" + chakra)
         h3 #{card_title}
         p #{card_description_quick}
@@ -15,9 +16,10 @@ mixin inbe(quick)
   - var title = "Inner Breeze"
   - var description = "Experience the Wim Hof breathing method with Inner Breeze."
   - var description_quick = "Guided Wim Hof Breathing Method"
-  - var url = "/inbe/#/"
+  - var url = "https://inner-breeze.app/"
+  - var info = "/inbe"
   - var img = "/assets/cards/inner-breeze.png"
-  +card(title, description, description_quick, url, img, quick, "solar")
+  +card(title, description, description_quick, url, img, quick, "solar", info)
 
 mixin gitea(quick)
   - var title = "Git NaoX"
