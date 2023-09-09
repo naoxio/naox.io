@@ -2,7 +2,7 @@ mixin card(card_title, card_description, card_description_quick, card_url, card_
   - var final_url = info || card_url;
   if (!quick)
     div.card(class="border-card-" + chakra)
-      a(href=final_url)
+      a(href=card_url)
         img(src=card_img, alt=card_title)
         h2 #{card_title}
         p(class="text-color") #{card_description}
