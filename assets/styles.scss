@@ -102,7 +102,7 @@ body {
   transition: background-color 0.3s ease;
   background-color: map-get($chakras, "earth-star");
   color: map-get($chakras, "soul-star");
-  padding: 1em;
+  padding: 1em 3em;
   top: 0;
   bottom: 0;
   right: 0;
