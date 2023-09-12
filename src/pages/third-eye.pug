@@ -1,5 +1,6 @@
 extends ../layouts/base_layout.pug
 include ../mixins/chakra_nav.pug
+include ../cards.pug
 
 block variables 
   - title = "NaoX Ajna"
@@ -7,4 +8,4 @@ block variables
 block body
   header
     +chakraNav("third-eye", "m")
-    
+  +searXNG
