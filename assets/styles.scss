@@ -159,6 +159,9 @@ a:hover {
     margin: 0.5em;
     width: 220px;
   }
+  a {
+    margin: 0.5em;
+  }
 }
 
 
@@ -199,6 +202,11 @@ a:hover {
 .card img {
   max-width: 256px;
   border-radius: 8px;
+  @media (max-width: 480px) {
+    max-width: 128px;
+
+  }
+  
 }
 
 /* CSS classes for each chakra */
@@ -296,6 +304,23 @@ a:hover {
       img {
         width: calc($size * 2);
       }
+
+      @media (max-width: 480px) {
+        width: calc($size * 6 * 0.8);
+        height: calc($size * 6 * 0.8);
+        
+        img {
+          width: calc($size * 2 * 0.8);
+        }
+      }
+      @media (max-width: 430px) {
+        width: calc($size * 6 * 0.5);
+        height: calc($size * 6 * 0.5);
+        
+        img {
+          width: calc($size * 2 * 0.8);
+        }
+      }
     }
   }
 
@@ -318,6 +343,13 @@ a:hover {
           &.#{$name} {
             $size: calc($size * 2);
             transform: translate(-50%, -50%) rotate($current-rotation) translateY(-$size) rotate(-$current-rotation);
+
+            @media (max-width: 480px) {
+              $size: calc($size *  0.8);
+              transform: translate(-50%, -50%) rotate($current-rotation) translateY(-$size) rotate(-$current-rotation);
+
+            }
+
           }
         }
       
