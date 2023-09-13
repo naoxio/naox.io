@@ -5,7 +5,8 @@
   "devDependencies": {
     "@parcel/transformer-pug": "^2.9.3",
     "@parcel/transformer-sass": "^2.9.3",
-    "parcel": "^2.9.3"
+    "parcel": "^2.9.3",
+    "parcel-reporter-static-files-copy": "^1.5.2"
   },
   "scripts": {
     "dev": "parcel src/pages/*.pug",
