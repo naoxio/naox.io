@@ -1,5 +1,6 @@
 extends ../layouts/base_layout.pug
 include ../mixins/quick_nav.pug
+include ../cards.pug
 
 block body
   header.content.center
@@ -10,7 +11,15 @@ block body
     +quickNav
     h2 Embark on a journey
     p NaoX is dedicated to harmonizing the digital, spiritual, and physical realms.
-    div.row.space-around
-      a(href="/wheel") Chakra Wheel
-      a(href="/list") Quick List
     br
+    div
+      div.row.wrap
+        +inbe(true)
+        +uku(true)
+
+    h2 Find Us On
+    div.row.space-around.wrap
+      a(href="https://t.me/naoxio") Telegram
+      a(href="https://github.com/naoxio") GitHub
+      a(href="https://coindrop.to/naox") Coindrop
+      a(href="https://x.com/naox_io") X

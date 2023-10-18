@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Tibet';
-  src: url(/assets/fonts/Tibet.otf);
+  font-family: 'SawarabiMincho';
+  src: url(/assets/fonts/SawarabiMincho-Regular.ttf);
 }
 
 $chakras: (
@@ -41,7 +41,7 @@ $light-theme-background-color: map-get($chakras, "soul-star");
 html, body {
   padding: 0;
   margin: 0;
-  font-family: 'tibet';
+  font-family: 'SawarabiMincho';
   font-size: x-large;
 }
 
