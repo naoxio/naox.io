@@ -12,8 +12,8 @@ $chakras: (
   "third-eye": #673ab7,
   "ajna": #673ab7,
   "crown": #9c27b0,
-  "soul-star": #fef,
-  "earth-star": #101
+  "soul-star": #fcf2ec,
+  "earth-star": #22202a
 );
 
 $chakras7: map-remove($chakras, "soul-star", "earth-star", "ajna");
