@@ -9,6 +9,7 @@ mixin card(card_title, card_description, tagline, card_url, card_img, quick, cha
   else
     a(href=final_url)
       div(class="border-card-" + chakra)
+        img(src=card_img, alt=card_title, width="128")
         h3 #{card_title}
         p #{tagline}
 
@@ -24,7 +25,7 @@ mixin inbe(quick)
 mixin uku(quick)
   - var title = "Ukuvota"
   - var description = "Ukuvota is a collaborative score voting platform where anyone can start a process. Proposals are collected and voted upon using emojis. The final scores highlight the preferred solution."
-  - var tagline = "Finding the best solution"
+  - var tagline = "Collaborative score voting"
   - var url = "https://ukuvota.world"
   - var info = "/uku"
   - var img = "/assets/cards/ukuvota.png"
