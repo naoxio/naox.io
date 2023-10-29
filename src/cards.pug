@@ -1,5 +1,5 @@
 mixin card(card_title, card_description, tagline, card_url, card_img, quick, chakra, info)
-  - var final_url = info || card_url;
+  - var final_url = card_url;
   if (!quick)
     div.card(class="border-card-" + chakra)
       a(href=card_url)
