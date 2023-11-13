@@ -1,5 +1,5 @@
 # NaoX Static Website
-![Logo](./assets/favicon.png)
+![Logo](./assets/favicon-32x32.png)
 
 ## Community
 We welcome any participates and you should feel welcome to share your ideas.
