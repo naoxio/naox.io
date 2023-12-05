@@ -3,20 +3,15 @@
   src: url(/assets/fonts/SawarabiMincho-Regular.ttf);
 }
 
-$chakras: (
-  "root": #e33f3f,
-  "sacral": #ff7d00,
-  "solar": #ffdb4d,
-  "heart": #4caf50,
-  "throat": #2196f3,
-  "third-eye": #673ab7,
-  "ajna": #673ab7,
-  "crown": #9c27b0,
-  "soul-star": #fcf2ec,
-  "earth-star": #22202a
+// Defining new color scheme
+$colors: (
+  "primary": #00adb5, // Cyan
+  "secondary": #393e46, // Dark Grey
+  "tertiary": #aad8d3, // Light Cyan
+  "quaternary": #eeeeee, // Light Grey
+  "nature-green": #52de97, // Green
+  "nature-brown": #a47c48, // Brown
 );
-
-$chakras7: map-remove($chakras, "soul-star", "earth-star", "ajna");
 
 $sizes: (
   'xxs': 16px,
@@ -28,8 +23,8 @@ $sizes: (
   'xxl': 128px
 );
 
-$default-background-color: map-get($chakras, "earth-star");
-$light-theme-background-color: map-get($chakras, "soul-star");
+$default-background-color: map-get($colors, "secondary");
+$light-theme-background-color: map-get($colors, "quaternary");
 
 @each $name, $size in $sizes {
   .#{$name} {
@@ -56,9 +51,11 @@ body {
     #container {
       background-color: $default-background-color;
     }
+    a:hover {
+      color: map-get($colors, "nature-green");
+    }
   }
 }
-
 
 .circle {
   width: 52px;
@@ -89,8 +86,16 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .center {
   text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-justify {
+  text-align: justify;
 }
 .absolute {
   position: absolute;
@@ -100,15 +105,14 @@ body {
   position: fixed;
   flex-direction: column;
   transition: background-color 0.3s ease;
-  background-color: map-get($chakras, "earth-star");
-  color: map-get($chakras, "soul-star");
+  background-color: map-get($colors, "secondary");
+  color: map-get($colors, "quaternary");
   padding: 1em 3em;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   overflow-y: auto;
-
 }
 
 header {
@@ -116,24 +120,23 @@ header {
   margin: auto;
 }
 
-
 h1 {
-  color: map-get($chakras, "crown");
-  font-size: 2em; 
+  color: map-get($colors, "primary");
+  font-size: 2em;
 }
 
 h2 {
-  color: map-get($chakras, "third-eye");
+  color: map-get($colors, "nature-green");
   font-size: 1.5em;
 }
 
 h3 {
-  color: map-get($chakras, "heart");
+  color: map-get($colors, "nature-brown");
   font-size: 1.2em;
 }
 
 h4 {
-  color: map-get($chakras, "solar");
+  color: map-get($colors, "tertiary");
   font-size: 1em;
 }
 
@@ -142,13 +145,18 @@ p {
 }
 
 a {
-  color: map-get($chakras, "throat");
+  color: map-get($colors, "primary");
   text-decoration: none;
   transition: color 0.3s;
 }
 
 a:hover {
-  color: map-get($chakras, "third-eye");
+  // Adjusting hover color for better visibility on dark theme
+  @if map-get($colors, "secondary") == $default-background-color {
+    color: map-get($colors, "nature-green"); // A contrasting color for hover
+  } @else {
+    color: map-get($colors, "secondary");
+  }
 }
 
 .row {
@@ -164,11 +172,10 @@ a:hover {
   }
 }
 
-
 .text-color {
-  color: map-get($chakras, "soul-star");
+  color: map-get($colors, "quaternary");
   body.light-theme & {
-    color: map-get($chakras, "earth-star");
+    color: map-get($colors, "secondary");
   }
 }
 
@@ -204,173 +211,8 @@ a:hover {
   border-radius: 8px;
   @media (max-width: 480px) {
     max-width: 128px;
-
-  }
-  
-}
-
-/* CSS classes for each chakra */
-@each $chakra, $color in $chakras {
-  .#{$chakra} {
-    box-shadow: 0px 0px 20px rgba($color, 0.8);
-  }
-  .#{$chakra}:hover {
-    box-shadow: 0px 0px 20px rgba($color, 1);
-  }
-
-  .#{$chakra}-text { 
-    color: $color;
-  }
-
-
-  .border-card-#{$chakra} {
-    background-color: mix($default-background-color, $color, 90%);
-    padding: 0.5em;
-    border: 1px solid $color;
-    border-radius: 2em;
-
-    $hover-border-color: if($chakra == "third-eye", map-get($chakras, "root"), map-get($chakras, "ajna"));
-
-    &:hover {
-      border: 1px solid $hover-border-color;
-    }
-    body.light-theme & {
-      background-color: mix($light-theme-background-color, $color, 90%);
-    }
-  }
-  @keyframes #{$chakra}-shadowPulse {
-    0% {
-      box-shadow: inset 0px 0px 5px rgba($color, 0);
-    }
-    50% {
-      box-shadow: inset 0px 0px 10px $color;
-    }
-    100% {
-      box-shadow: inset 0px 0px 5px rgba($color, 0);
-    }
-  }
-  .#{$chakra}-animated {
-    animation: #{$chakra}-shadowPulse 3s infinite;
   }
 }
-
-
-@function rotate-list($list, $start-index) {
-  $rotated-list: ();
-  $length: length($list);
-
-  $start-index: if($start-index < 1, 1, $start-index);
-
-  @for $i from $start-index through $length {
-    $rotated-list: append($rotated-list, nth($list, $i));
-  }
-
-  @for $i from 1 through $start-index  {
-    $rotated-list: append($rotated-list, nth($list, $i));
-  }
-
-  @return $rotated-list;
-}
-
-.chakra-container {
-  position: relative;
-
-  width: 320px; 
-  height: 320px; 
-  
-  text-shadow: 1px 1px 4px map-get($chakras, "ajna");
-
-  
-  .soul-star, .earth-star, .ajna {
-    opacity: 0.2;
-  }
-
-  .center-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  $total-chakras: length(map-keys($chakras7));
-  $rotation-step: calc(360deg / $total-chakras);
-  $radius: 140px;
-
-
-  @each $name, $size in $sizes {
-    &.#{$name} {
-      width: calc($size * 6);
-      height: calc($size * 6);
-      img {
-        width: calc($size * 2);
-      }
-
-      @media (max-width: 480px) {
-        width: calc($size * 6 * 0.8);
-        height: calc($size * 6 * 0.8);
-        
-        img {
-          width: calc($size * 2 * 0.8);
-        }
-      }
-      @media (max-width: 430px) {
-        width: calc($size * 6 * 0.5);
-        height: calc($size * 6 * 0.5);
-        
-        img {
-          width: calc($size * 2 * 0.8);
-        }
-      }
-    }
-  }
-
-  @each $chakra, $color in $chakras7 {
-    $current-rotation: 0deg;
-
-    $start-index: index(map-keys($chakras7), $chakra);
-    $order: rotate-list(map-keys($chakras7), $start-index);
-  
-    @each $ordered-chakra, $ordered-color in $order {
-      $ordered-color: map-get($chakras7, $ordered-chakra);
-
-      .#{$chakra}-start .#{$ordered-chakra}-item {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate($current-rotation) translateY(-$radius) rotate(-$current-rotation);
-        
-        @each $name, $size in $sizes {
-          &.#{$name} {
-            $size: calc($size * 2);
-            transform: translate(-50%, -50%) rotate($current-rotation) translateY(-$size) rotate(-$current-rotation);
-
-            @media (max-width: 480px) {
-              $size: calc($size *  0.8);
-              transform: translate(-50%, -50%) rotate($current-rotation) translateY(-$size) rotate(-$current-rotation);
-
-            }
-
-          }
-        }
-      
-        color: rgba($ordered-color, 0.8);
-        text-shadow: -1px -1px 5px rgba($ordered-color, 0.8);
-      }
-
-      .#{$chakra}-start .#{$ordered-chakra}-item:hover {
-        color: rgba($ordered-color, 1);
-        text-shadow: -1px -1px 5px rgba($ordered-color, 1);
-
-        .soul-star, .earth-star, .ajna {
-          opacity: 1;
-        }
-      }
-
-      $current-rotation: $current-rotation + $rotation-step;
-    }
-  }
-}
-
 
 #themeToggle {
   display: none; // Hide the checkbox
@@ -396,8 +238,8 @@ a:hover {
   }
 
   &:checked ~ #container {
-    background-color: map-get($chakras, "soul-star");
-    color: map-get($chakras, "earth-star");
+    background-color: map-get($colors, "quaternary");
+    color: map-get($colors, "secondary");
   }
 }
 

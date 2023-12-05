@@ -1,32 +1,44 @@
-mixin card(card_title, card_description, tagline, card_url, card_img, quick, chakra, info)
-  - var final_url = card_url;
+mixin card(card_title, card_description, tagline, card_img, quick, chakra, info, web_app, github, f_droid, flathub)
   if (!quick)
     div.card(class="border-card-" + chakra)
-      a(href=card_url)
-        img(src=card_img, alt=card_title)
-        h2 #{card_title}
-        p(class="text-color") #{card_description}
+      img(src=card_img, alt=card_title)
+      h2 #{card_title}
+      div(class="text-color text-justify") #{card_description}
+      br
+      div.row
+        if(web_app)
+          a(href=web_app) Web App
+        if(web_app)
+          a(href=github) GitHub
+        if(f_droid)
+          a(href=f_droid) F-Droid
+        if(flathub)
+          a(href=flathub) Flathub
   else
-    a(href=final_url)
+    a(href=info)
       div(class="border-card-" + chakra)
-        img(src=card_img, alt=card_title, width="128")
+        img(src=card_img, alt=card_title, width="192")
         h3 #{card_title}
         p #{tagline}
 
 mixin inbe(quick)
   - var title = "Inner Breeze"
-  - var description = "Experience the Wim Hof breathing method with Inner Breeze."
+  - var description = "Find serenity in every breath with Inner Breeze.\n Tailored for all levels, this app guides you through the Wim Hof Breathing Method with ease. Experience mindful breathing with personalized settings and track your journey towards tranquility and rejuvenation. Inner Breeze is more than an app; it's your daily retreat into calm."
   - var tagline = "Guided Wim Hof Breathing Method"
-  - var url = "https://inner-breeze.app/"
+  - var web_app = "https://inner-breeze.app/"
+  - var github = "https://github.com/naoxio/inner_breeze"
+  - var f_droid = "https://f-droid.org/packages/io.naox.inbe"
+  - var flathub = "https://flathub.org/apps/io.naox.InnerBreeze"
   - var info = "/inbe"
   - var img = "/assets/cards/inner-breeze.png"
-  +card(title, description, tagline, url, img, quick, "solar", info)
+  +card(title, description, tagline, img, quick, "solar", info, web_app, github, f_droid, flathub)
 
 mixin uku(quick)
   - var title = "Ukuvota"
   - var description = "Ukuvota is a collaborative score voting platform where anyone can start a process. Proposals are collected and voted upon using emojis. The final scores highlight the preferred solution."
   - var tagline = "Collaborative score voting"
-  - var url = "https://ukuvota.world"
+  - var web_app = "https://ukuvota.world"
+  - var github = "https://github.com/naoxio/ukuvota"
   - var info = "/uku"
   - var img = "/assets/cards/ukuvota.png"
-  +card(title, description, tagline, url, img, quick, "throat", info)
+  +card(title, description, tagline, img, quick, "throat", info, web_app, github, "", "")
