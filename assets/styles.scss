@@ -3,15 +3,15 @@
   src: url(/assets/fonts/SawarabiMincho-Regular.ttf);
 }
 
-// Defining new color scheme
 $colors: (
-  "primary": #00adb5, // Cyan
-  "secondary": #393e46, // Dark Grey
-  "tertiary": #aad8d3, // Light Cyan
-  "quaternary": #eeeeee, // Light Grey
-  "nature-green": #52de97, // Green
-  "nature-brown": #a47c48, // Brown
+  "primary": #00adb5, // Cyan (kept the same)
+  "secondary": #25282c, // Darker Grey
+  "tertiary": #aad8d3, // Light Cyan (kept the same)
+  "quaternary": #dddddd, // Lighter Grey
+  "nature-green": #52de97, // Green (kept the same)
+  "nature-brown": #a47c48, // Brown (kept the same)
 );
+
 
 $sizes: (
   'xxs': 16px,
@@ -57,29 +57,11 @@ body {
   }
 }
 
-.circle {
-  width: 52px;
-  height: 52px;
-  border-radius: 100%;
-  margin: 1em 1em;
-  @each $name, $size in $sizes {
-    &.#{$name} {
-      $size: calc($size * 1);
-      width: $size;
-      height: $size;
-    }
-  }
-}
 
 .m-auto {
   margin: 2em auto;
 }
 
-.circle-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .flex-center {
   display: flex;
@@ -93,9 +75,6 @@ body {
 
 .text-left {
   text-align: left;
-}
-.text-justify {
-  text-align: justify;
 }
 .absolute {
   position: absolute;
@@ -150,22 +129,13 @@ a {
   transition: color 0.3s;
 }
 
-a:hover {
-  // Adjusting hover color for better visibility on dark theme
-  @if map-get($colors, "secondary") == $default-background-color {
-    color: map-get($colors, "nature-green"); // A contrasting color for hover
-  } @else {
-    color: map-get($colors, "secondary");
-  }
-}
-
 .row {
   display: flex;
   justify-content: space-around;
   align-items: center;
   div {
     margin: 0.5em;
-    width: 220px;
+    width: 240px;
   }
   a {
     margin: 0.5em;
@@ -199,7 +169,7 @@ a:hover {
   }
 }
 .card {
-  max-width: 480px;
+  max-width: 520px;
   padding: 2em;
   margin: 1em auto;
   border-radius: 50%;
