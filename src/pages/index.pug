@@ -3,22 +3,24 @@ include ../mixins/quick_nav.pug
 include ../cards.pug
 
 block body
-  div.center
-    br
-    br
+  div.card
     a(href="/").center-image
-      img(width="256" src="/assets/logo.png")
+      img.logo(src="/assets/logo.png")
     h1 NaoX
     h2 Embark on a journey
-    p Digital utilities providing harmony and liberty to upgrade your community and your own self. Invoking consciousness and focusing on the now as we had to a new era of humanity and connection.
-    br
-    div.row.wrap
-      +inbe(true)
-      +evoti(true)
-
-    h2 Find Us On
+    p Digital utilities providing harmony and liberty to upgrade your community and your own self. Invoking consciousness and focusing on the now as we head to a new era of humanity and connection.
+    h3 Join Us On
     div.row.space-around.wrap
       a(href="https://t.me/naoxio") Telegram
       a(href="https://github.com/naoxio") GitHub
-      a(href="https://coindrop.to/naox") Coindrop
       a(href="https://x.com/naox_io") X
+  br
+  div.row.wrap
+    +inbe(true)
+    +evoti(true)
+  div.center
+    span 
+      | If you find utility in what we do please consider dropping a donation on
+      a(href="https://coindrop.to/naox")  Coindrop
+
+    p NaoX © 2024
