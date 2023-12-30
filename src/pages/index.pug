@@ -3,15 +3,14 @@ include ../mixins/quick_nav.pug
 include ../cards.pug
 
 block body
-  header.content.center
+  div.center
     br
     br
     a(href="/").center-image
       img(width="128" src="/assets/logo.png")
-    +quickNav
     h2 Embark on a journey
     br
-    div
+    div.row.wrap
       +inbe(true)
       +evoti(true)
 
