@@ -133,10 +133,7 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  div {
-    margin: 0.5em;
-    width: 240px;
-  }
+
   a {
     margin: 0.5em;
   }
@@ -163,18 +160,13 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  .card {
-    width: 420px;
-    margin: 1rem;
-  }
-}
+ }
 .text {
   color: inherit;
 }
 .card {
+  padding: 5rem 0;
   max-width: 520px;
-  padding: 2em;
-  margin: 1em auto;
   border-radius: 50%;
   text-align: center;
 }
