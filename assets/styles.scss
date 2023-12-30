@@ -71,7 +71,11 @@ body {
 .center {
   text-align: center;
 }
-
+.small {
+  line-height: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
 .text-left {
   text-align: left;
 }
@@ -159,6 +163,7 @@ a {
   color: inherit;
 }
 .card {
+  margin: auto;
   padding: 5rem 0;
   max-width: 520px;
   border-radius: 50%;

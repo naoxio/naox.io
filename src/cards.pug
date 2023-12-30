@@ -1,7 +1,8 @@
-mixin card(title, tagline, description, img, url)
+mixin card(title, tagline, description, img, url, subtitle)
   div.card
     img(src=img, alt=title, width="192")
     h3 #{title}
+    h3.small #{subtitle}
     h4 #{tagline}
     p.text #{description}
     a(href=url) Go to #{title}  
@@ -15,8 +16,9 @@ mixin inbe()
   +card(title, tagline, description, img, url)
 mixin evoti()
   - var title = "Evotico"
+  - var subtitle = "(Formerly Ukuvota)"
   - var description = "Streamlining secure, efficient electronic voting for organizations and communities, fostering global empowerment."
   - var tagline = "Collaborative score voting"
   - var url = "https://ukuvota.world"
   - var img = "/assets/cards/evotico.png"
-  +card(title, tagline, description, img, url)
+  +card(title, tagline, description, img, url, subtitle)
