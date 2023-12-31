@@ -73,6 +73,7 @@ body {
   right: 0;
   left: 0;
   overflow-y: auto;
+  margin: auto;
 }
 
 h1 {
@@ -106,16 +107,11 @@ a {
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  max-width: 1200px;
+  margin: auto;
 
   a {
     margin: 0.5rem;
-  }
-}
-
-.text-color {
-  color: map-get($colors, "quaternary");
-  body.light-theme & {
-    color: map-get($colors, "secondary");
   }
 }
 
@@ -129,11 +125,6 @@ a {
 .space-around {
   justify-content: space-around;
 }
-.card-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
- }
 .text {
   color: inherit;
 }
@@ -143,7 +134,8 @@ a {
   align-items: center;
   margin: auto;
   padding: 5rem 0;
-  max-width: 520px;
+  max-width: 540px;
+  text-align: center;
 }
 
 .card img {
