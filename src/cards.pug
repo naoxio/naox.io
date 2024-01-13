@@ -2,7 +2,9 @@ mixin card(title, tagline, description, img, url, subtitle)
   div.card
     img(src=img, alt=title, width="192")
     h2 #{title}
-    h2.small #{subtitle}
+    if subtitle
+      h2.small #{subtitle}
+    br
     xh3 #{tagline}
     p.text #{description}
     a(href=url) Go to #{title}  
