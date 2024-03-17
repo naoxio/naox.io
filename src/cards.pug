@@ -1,4 +1,4 @@
-mixin card(title, tagline, description, img, url, subtitle)
+mixin card(title, tagline, description, img, url, url_name, subtitle)
   div.card
     img(src=img, alt=title, width="192")
     h2 #{title}
@@ -7,7 +7,9 @@ mixin card(title, tagline, description, img, url, subtitle)
     br
     xh3 #{tagline}
     p.text #{description}
-    a(href=url) Go to #{title}  
+    h3.flex
+      p Go to
+      a(href=url) #{url_name}  
 
 mixin inbe()
   - var title = "Inner Breeze"
@@ -15,19 +17,10 @@ mixin inbe()
   - var description = "Find serenity in every breath with Inner Breeze. This app guides you through the Wim Hof Breathing Method with ease."
 
   - var url = "https://inner-breeze.app/"
+  - var url_name = "inner-breeze.app"
   - var img = "/assets/cards/inner-breeze.png"
-  +card(title, tagline, description, img, url)
+  +card(title, tagline, description, img, url, url_name)
   
-mixin evoti()
-  - var title = "Evotico"
-  - var subtitle = "wip"
-  - var tagline = "Decision making platform"
-  - var description = "Manage groups and make decisions collaboratively on a secure and decentralized platform."
-
-  - var url = "https://evoti.co"
-  - var img = "/assets/cards/evotico.png"
-  +card(title, tagline, description, img, url, subtitle)
-
 
 mixin uku()
   - var title = "Ukuvota"
@@ -35,6 +28,33 @@ mixin uku()
   - var description = "Quick tool for collaborative score voting to find consensus in a group."
 
   - var url = "https://ukuvota.world"
+  - var url_name = "ukuvota.world"
   - var img = "/assets/cards/ukuvota.png"
 
-  +card(title, tagline, description, img, url, subtitle)
+  +card(title, tagline, description, img, url, url_name, subtitle)
+
+
+mixin evoti()
+  - var title = "Evotico"
+  - var subtitle = "not-complete"
+  - var tagline = "Decision making platform"
+  - var description = "Manage groups and make decisions collaboratively on a secure and decentralized platform."
+
+  - var url = "https://evoti.co"
+  - var url_name = "evoti.co"
+  - var img = "/assets/cards/evotico.png"
+  +card(title, tagline, description, img, url, url_name, subtitle)
+
+
+mixin wander()
+  - var title = "Wanderlust"
+  - var subtitle = "not-complete"
+  - var tagline = "Your personal adventure map"
+  - var description = "Color in a world map of places that you have been to."
+
+  - var url = "https://wanderlust.naox.io/"
+  - var url_name = "wanderlust.naox.io"
+
+  - var img = "/assets/cards/wanderlust.png"
+  +card(title, tagline, description, img, url, url_name, subtitle)
+  
