@@ -11,16 +11,30 @@ mixin card(title, tagline, description, img, url, subtitle)
 
 mixin inbe()
   - var title = "Inner Breeze"
+  - var tagline = "Guided Wim Hof breathing meditation"
   - var description = "Find serenity in every breath with Inner Breeze. This app guides you through the Wim Hof Breathing Method with ease."
-  - var tagline = "Guided Wim Hof Breathing Meditation"
+
   - var url = "https://inner-breeze.app/"
   - var img = "/assets/cards/inner-breeze.png"
   +card(title, tagline, description, img, url)
+  
 mixin evoti()
   - var title = "Evotico"
-  - var subtitle = "(Formerly Ukuvota)"
-  - var description = "Streamlining secure, efficient electronic voting for organizations and communities, fostering global empowerment."
-  - var tagline = "Collaborative score voting"
-  - var url = "https://ukuvota.world"
+  - var subtitle = "wip"
+  - var tagline = "Decision making platform"
+  - var description = "Manage groups and make decisions collaboratively on a secure and decentralized platform."
+
+  - var url = "https://evoti.co"
   - var img = "/assets/cards/evotico.png"
+  +card(title, tagline, description, img, url, subtitle)
+
+
+mixin uku()
+  - var title = "Ukuvota"
+  - var tagline = "Collaborative score voting tool"
+  - var description = "Quick tool for collaborative score voting to find consensus in a group."
+
+  - var url = "https://ukuvota.world"
+  - var img = "/assets/cards/ukuvota.png"
+
   +card(title, tagline, description, img, url, subtitle)
