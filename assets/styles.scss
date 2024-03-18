@@ -67,7 +67,7 @@ body {
   transition: background-color 0.3s ease;
   background-color: map-get($colors, "secondary");
   color: map-get($colors, "quaternary");
-  padding: 1em 1rem;
+  padding: 1rem 1rem;
   top: 0;
   bottom: 0;
   right: 0;
@@ -141,7 +141,8 @@ a {
   align-items: center;
   margin: auto;
   max-width: 600px;
-  padding: 1em;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .border {
