@@ -77,12 +77,12 @@ body {
 }
 
 h1 {
-  color: map-get($colors, "primary");
+  color: map-get($colors, "nature-green");
   font-size: 2em;
 }
 
 h2 {
-  color: map-get($colors, "nature-green");
+  color: map-get($colors, "nature-brown");
   font-size: 1.5em;
   margin: 0.5em;
 }
