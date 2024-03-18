@@ -1,5 +1,5 @@
 mixin card(title, tagline, description, img, url, url_name, subtitle)
-  div.card
+  div.card.border.card-small
     img(src=img, alt=title, width="192")
     h2 #{title}
     if subtitle
