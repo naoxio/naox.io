@@ -1,5 +1,5 @@
-mixin card(title, tagline, description, img, url, url_name, subtitle)
-  div.card.border.card-small
+mixin card(title, tagline, description, img, url, url_name, bg, subtitle)
+  div.card.border.card-small(class=bg)
     img(src=img, alt=title, width="192")
     h2 #{title}
     if subtitle
@@ -15,23 +15,23 @@ mixin inbe()
   - var title = "Inner Breeze"
   - var tagline = "Guided Wim Hof breathing meditation"
   - var description = "Find serenity in every breath with Inner Breeze. This app guides you through the Wim Hof Breathing Method with ease."
-
+  - var bg = "purple"
   - var url = "https://inner-breeze.app/"
   - var url_name = "inner-breeze.app"
   - var img = "/assets/cards/inner-breeze.png"
-  +card(title, tagline, description, img, url, url_name)
+  +card(title, tagline, description, img, url, url_name, bg)
   
 
 mixin uku()
   - var title = "Ukuvota"
   - var tagline = "Collaborative score voting tool"
   - var description = "Quick tool for collaborative score voting to find consensus in a group."
-
+  - var bg = "blue"
   - var url = "https://ukuvota.world"
   - var url_name = "ukuvota.world"
   - var img = "/assets/cards/ukuvota.png"
 
-  +card(title, tagline, description, img, url, url_name, subtitle)
+  +card(title, tagline, description, img, url, url_name, bg, subtitle)
 
 
 mixin evoti()
@@ -39,11 +39,11 @@ mixin evoti()
   - var subtitle = "not-ready"
   - var tagline = "Decision making platform"
   - var description = "Manage groups and make decisions collaboratively on a secure and decentralized platform."
-
+  - var bg = "yellow"
   - var url = "https://evoti.co"
   - var url_name = "evoti.co"
   - var img = "/assets/cards/evotico.png"
-  +card(title, tagline, description, img, url, url_name, subtitle)
+  +card(title, tagline, description, img, url, url_name, bg, subtitle)
 
 
 mixin wander()
@@ -51,10 +51,10 @@ mixin wander()
   - var subtitle = "pre-pre-alpha"
   - var tagline = "Your personal adventure map"
   - var description = "Color in a world map of places that you have been to."
-
+  - var bg = "orange"
   - var url = "https://wanderlust.naox.io/"
   - var url_name = "wanderlust.naox.io"
 
   - var img = "/assets/cards/wanderlust.png"
-  +card(title, tagline, description, img, url, url_name, subtitle)
+  +card(title, tagline, description, img, url, url_name, bg, subtitle)
   
