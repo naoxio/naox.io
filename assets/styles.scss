@@ -10,6 +10,7 @@ $colors: (
   "quaternary": #dddddd, // Lighter Grey
   "nature-green": #52de97, // Green (kept the same)
   "nature-brown": #a47c48, // Brown (kept the same)
+  "lighter-brown": #a47c48, // Brown (kept the same)
 );
 
 $default-background-color: map-get($colors, "secondary");
@@ -162,23 +163,23 @@ a {
   }
 }
 
-.blue {
+.blue-bg {
   background-color: #0000FF33;
 }
 
-.purple {
+.purple-bg {
   background-color: #EE82EE33;
 }
 
-.green {
+.green-bg {
   background-color: #00800033;
 }
 
-.orange {
+.orange-bg {
   background-color: #FFA50033;
 }
 
-.yellow {
+.yellow-bg {
   background-color: #FFFF0033;
 }
 
@@ -222,4 +223,8 @@ label[for="themeToggle"] {
     width: 2em;
     height: 2em;
   }
+}
+
+.lh-0 {
+  line-height: 0;
 }

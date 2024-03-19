@@ -1,37 +1,43 @@
-mixin card(title, subtitle, tagline, description, img, url, bg)
+mixin card(title, subtitle, tagline, description, img, url, mirrorUrl, bg, statusColor)
   - var urlName = url.replace(/^https?:\/\//, '')
-  div.card.border.card-small(class=bg)
+  div.card.border.card-small(class=bg + "-bg")
     img(src="/assets/cards/" + img, alt=title, width="192")
     h2 #{title}
     if subtitle
-      h2.small #{subtitle}
+      div.small(class=statusColor) #{subtitle}
     br
-    h3 #{tagline}
+    b #{tagline}
     p.text #{description}
-    h3.flex
+    div.h3.flex.lh-0
       p Go to
       a(href=url) #{urlName}
+    if mirrorUrl
+      p.small (Mirror: #[a(href=mirrorUrl) #{mirrorUrl.replace(/^https?:\/\//, '')}])
 
 mixin innerBreeze()
   +card(
     "Inner Breeze",
-    "",
+    "v1.2.8",
     "Guided Wim Hof breathing meditation",
     "Find serenity in every breath with Inner Breeze. This app guides you through the Wim Hof Breathing Method with ease.",
     "inner-breeze.png",
-    "https://inner-breeze.app/",
-    "purple"
+    "https://inner-breeze.app",
+    "",
+    "purple",
+    "green"
   )
 
 mixin ukuvota()
   +card(
     "Ukuvota",
-    "",
+    "v0.1.2",
     "Collaborative score voting tool",
     "Quick tool for collaborative score voting to find consensus in a group.",
     "ukuvota.png",
     "https://ukuvota.world",
-    "blue"
+    "",
+    "blue",
+    "orange"
   )
 
 mixin evotico()
@@ -42,16 +48,20 @@ mixin evotico()
     "Manage groups and make decisions collaboratively on a secure and decentralized platform.",
     "evotico.png",
     "https://evoti.co",
-    "yellow"
+    "",
+    "yellow",
+    "red"
   )
 
 mixin traveltint()
   +card(
     "Traveltint",
-    "pre-pre-alpha",
+    "not-ready",
     "Your personal adventure map",
     "Color in a world map of places that you have been to.",
     "traveltint.png",
     "https://traveltint.me",
+    "https://traveltint.vercel.app",
+    "orange",
     "orange"
   )
