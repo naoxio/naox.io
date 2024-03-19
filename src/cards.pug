@@ -8,11 +8,11 @@ mixin card(title, subtitle, tagline, description, img, url, mirrorUrl, bg, statu
     br
     b #{tagline}
     p.text #{description}
-    div.h3.flex.lh-0
-      p Go to
+    div.flex.lh-0
+      h3 Go to
       a(href=url) #{urlName}
     if mirrorUrl
-      p.small (Mirror: #[a(href=mirrorUrl) #{mirrorUrl.replace(/^https?:\/\//, '')}])
+      p.small Mirror: #[a.small(href=mirrorUrl) #{mirrorUrl.replace(/^https?:\/\//, '')}]
 
 mixin innerBreeze()
   +card(
@@ -22,7 +22,7 @@ mixin innerBreeze()
     "Find serenity in every breath with Inner Breeze. This app guides you through the Wim Hof Breathing Method with ease.",
     "inner-breeze.png",
     "https://inner-breeze.app",
-    "https://inbe.netlify.app/",
+    "https://inbe.netlify.app",
     "purple",
     "green"
   )
