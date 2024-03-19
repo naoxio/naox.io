@@ -11,7 +11,7 @@ mixin card(title, tagline, description, img, url, url_name, bg, subtitle)
       p Go to
       a(href=url) #{url_name}  
 
-mixin inbe()
+mixin inner-breeze()
   - var title = "Inner Breeze"
   - var tagline = "Guided Wim Hof breathing meditation"
   - var description = "Find serenity in every breath with Inner Breeze. This app guides you through the Wim Hof Breathing Method with ease."
@@ -22,7 +22,7 @@ mixin inbe()
   +card(title, tagline, description, img, url, url_name, bg)
   
 
-mixin uku()
+mixin ukuvota()
   - var title = "Ukuvota"
   - var tagline = "Collaborative score voting tool"
   - var description = "Quick tool for collaborative score voting to find consensus in a group."
@@ -34,7 +34,7 @@ mixin uku()
   +card(title, tagline, description, img, url, url_name, bg, subtitle)
 
 
-mixin evoti()
+mixin evotico()
   - var title = "Evotico"
   - var subtitle = "not-ready"
   - var tagline = "Decision making platform"
@@ -46,15 +46,15 @@ mixin evoti()
   +card(title, tagline, description, img, url, url_name, bg, subtitle)
 
 
-mixin wander()
-  - var title = "Wanderlust"
+mixin traveltint()
+  - var title = "Traveltint"
   - var subtitle = "pre-pre-alpha"
   - var tagline = "Your personal adventure map"
   - var description = "Color in a world map of places that you have been to."
   - var bg = "orange"
-  - var url = "https://wanderlust.naox.io/"
-  - var url_name = "wanderlust.naox.io"
+  - var url = "https://traveltint.me"
+  - var url_name = "traveltint.me"
 
-  - var img = "/assets/cards/wanderlust.png"
+  - var img = "/assets/cards/traveltint.png"
   +card(title, tagline, description, img, url, url_name, bg, subtitle)
   
