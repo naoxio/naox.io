@@ -1,60 +1,57 @@
-mixin card(title, tagline, description, img, url, url_name, bg, subtitle)
+mixin card(title, subtitle, tagline, description, img, url, bg)
+  - var urlName = url.replace(/^https?:\/\//, '')
   div.card.border.card-small(class=bg)
-    img(src=img, alt=title, width="192")
+    img(src="/assets/cards/" + img, alt=title, width="192")
     h2 #{title}
     if subtitle
       h2.small #{subtitle}
     br
-    xh3 #{tagline}
+    h3 #{tagline}
     p.text #{description}
     h3.flex
       p Go to
-      a(href=url) #{url_name}  
+      a(href=url) #{urlName}
 
-mixin inner-breeze()
-  - var title = "Inner Breeze"
-  - var tagline = "Guided Wim Hof breathing meditation"
-  - var description = "Find serenity in every breath with Inner Breeze. This app guides you through the Wim Hof Breathing Method with ease."
-  - var bg = "purple"
-  - var url = "https://inner-breeze.app/"
-  - var url_name = "inner-breeze.app"
-  - var img = "/assets/cards/inner-breeze.png"
-  +card(title, tagline, description, img, url, url_name, bg)
-  
+mixin innerBreeze()
+  +card(
+    "Inner Breeze",
+    "",
+    "Guided Wim Hof breathing meditation",
+    "Find serenity in every breath with Inner Breeze. This app guides you through the Wim Hof Breathing Method with ease.",
+    "inner-breeze.png",
+    "https://inner-breeze.app/",
+    "purple"
+  )
 
 mixin ukuvota()
-  - var title = "Ukuvota"
-  - var tagline = "Collaborative score voting tool"
-  - var description = "Quick tool for collaborative score voting to find consensus in a group."
-  - var bg = "blue"
-  - var url = "https://ukuvota.world"
-  - var url_name = "ukuvota.world"
-  - var img = "/assets/cards/ukuvota.png"
-
-  +card(title, tagline, description, img, url, url_name, bg, subtitle)
-
+  +card(
+    "Ukuvota",
+    "",
+    "Collaborative score voting tool",
+    "Quick tool for collaborative score voting to find consensus in a group.",
+    "ukuvota.png",
+    "https://ukuvota.world",
+    "blue"
+  )
 
 mixin evotico()
-  - var title = "Evotico"
-  - var subtitle = "not-ready"
-  - var tagline = "Decision making platform"
-  - var description = "Manage groups and make decisions collaboratively on a secure and decentralized platform."
-  - var bg = "yellow"
-  - var url = "https://evoti.co"
-  - var url_name = "evoti.co"
-  - var img = "/assets/cards/evotico.png"
-  +card(title, tagline, description, img, url, url_name, bg, subtitle)
-
+  +card(
+    "Evotico",
+    "not-ready",
+    "Decision making platform",
+    "Manage groups and make decisions collaboratively on a secure and decentralized platform.",
+    "evotico.png",
+    "https://evoti.co",
+    "yellow"
+  )
 
 mixin traveltint()
-  - var title = "Traveltint"
-  - var subtitle = "pre-pre-alpha"
-  - var tagline = "Your personal adventure map"
-  - var description = "Color in a world map of places that you have been to."
-  - var bg = "orange"
-  - var url = "https://traveltint.me"
-  - var url_name = "traveltint.me"
-
-  - var img = "/assets/cards/traveltint.png"
-  +card(title, tagline, description, img, url, url_name, bg, subtitle)
-  
+  +card(
+    "Traveltint",
+    "pre-pre-alpha",
+    "Your personal adventure map",
+    "Color in a world map of places that you have been to.",
+    "traveltint.png",
+    "https://traveltint.me",
+    "orange"
+  )
