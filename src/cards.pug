@@ -11,8 +11,8 @@ mixin card(title, subtitle, tagline, description, img, url, mirrorUrl, bg, statu
     div.flex.lh-0
       h3 Go to
       a(href=url) #{urlName}
-    if mirrorUrl
-      p.small Mirror: #[a.small(href=mirrorUrl) #{mirrorUrl.replace(/^https?:\/\//, '')}]
+    //if mirrorUrl
+      //p.small Mirror: #[a.small(href=mirrorUrl) #{mirrorUrl.replace(/^https?:\/\//, '')}]
 
 mixin innerBreeze()
   +card(
