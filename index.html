@@ -29,173 +29,24 @@
     <meta property="twitter:image" content="https://naox.io/og-image.jpg">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <!-- Additional Meta Tags -->
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#ff5e62">
-    <meta name="msapplication-TileColor" content="#ff5e62">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
 
-
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: #f5e6d3;
-            color: #4a4a4a;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 100px 0;
-            background: linear-gradient(45deg, #ff9966, #ff5e62);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('banner.webp');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.7;
-            z-index: 1;
-        }
-
-        header h1,
-        header .tagline {
-            position: relative;
-            z-index: 2;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff; }
-            to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; }
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            font-style: italic;
-        }
-        
-        .products {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-        .product {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 40px;
-            width: calc(40% - 20px);
-            min-width: 300px;
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .product:hover {
-            transform: translateY(-5px);
-        }
-        .product h2 {
-            color: #ff5e62;
-            text-align: center;
-        }
-        .product-logo {
-            width: 200px;
-            height: 200px;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
-
-        .cta {
-            display: inline-block;
-            background-color: #ff5e62;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .cta:hover {
-            background-color: #ff9966;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #4a4a4a;
-            color: white;
-            margin-top: 50px;
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
-            color: #ff9966;
-        }
-
-        /* New styles for the separator */
-        .separator {
-            height: 50px;
-            background: linear-gradient(to right, #ff9966, #ff5e62);
-            position: relative;
-            overflow: hidden;
-        }
-        .separator::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f5e6d3" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,149.3C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Media query for responsiveness */
-        @media (max-width: 768px) {
-            .product {
-                width: 100%;
-            }
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="space-background"></div>
+    <div class="stars"></div>
+
     <header>
         <h1>NaoX</h1>
-        <p class="tagline">Embark on a Journey</p>
+        <p class="tagline">Embark on a Journey through Infinite Digital Realms</p>
     </header>
-    
-    <div class="separator"></div>
 
     <div class="container">
         <div class="products">
@@ -226,5 +77,7 @@
             <a href="https://t.me/naoxio">Telegram</a>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
